@@ -1,0 +1,433 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  color: #334155;
+  padding: 2rem;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.card:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(99, 102, 241, 0.15));
+  transform: translateY(45px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #4f46e5;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  color: #475569;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.price {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.price span {
+  color: #4f46e5;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.hardcopy-price {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.hardcopy-price span {
+  color: #059669;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Pricing Section */
+.pricing-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+/* WhatsApp Button Styles */
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  background: #25D366;
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.whatsapp-button:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Final CTA Section */
+.final-cta {
+  margin: 4rem 0 2rem 0;
+  text-align: center;
+}
+
+.final-whatsapp {
+  font-size: 1.2rem;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.final-whatsapp:hover {
+  background: linear-gradient(135deg, #128C7E, #075E54);
+}
+
+/* FAQ Section Styles */
+.faq-section {
+  margin: 4rem 0;
+  text-align: left;
+}
+
+.faq-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(99, 102, 241, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(99, 102, 241, 0.08));
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
+}
+
+.faq-question h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #4f46e5;
+  margin: 0;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.faq-toggle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #6366f1;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
+  color: #8b5cf6;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+}
+
+.faq-answer p {
+  padding: 0 1.5rem 1.5rem;
+  margin: 0;
+  color: #475569;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.faq-answer ul {
+  padding: 0 1.5rem 1.5rem;
+  margin: 0;
+  padding-left: 2rem;
+}
+
+.faq-answer li {
+  color: #475569;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.faq-answer p:first-child {
+  padding-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 2rem;
+  }
+  
+  .faq-question h3 {
+    font-size: 1rem;
+  }
+  
+  .faq-question {
+    padding: 1rem;
+  }
+  
+  .faq-answer p,
+  .faq-answer ul {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Testimonials Section Styles */
+.testimonials-section {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.testimonials-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.testimonials-subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+  transition: all 0.3s ease;
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(45px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.student-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #4f46e5;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.student-info .course {
+  font-size: 0.9rem;
+  color: #6366f1;
+  font-weight: 500;
+  margin: 0 0 0.25rem 0;
+}
+
+.student-info .project {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 400;
+  margin: 0;
+  font-style: italic;
+}
+
+.rating {
+  font-size: 1.1rem;
+  color: #f59e0b;
+  margin-left: 1rem;
+}
+
+.review {
+  color: #475569;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.screenshot-placeholder {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.placeholder-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive adjustments for testimonials */
+@media (max-width: 768px) {
+  .testimonials-title {
+    font-size: 2rem;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  
+  .testimonial-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .rating {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
