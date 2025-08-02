@@ -36,24 +36,45 @@ testimonialCards.forEach(card => {
   testimonialObserver.observe(card);
 });
 
-// FAQ Accordion functionality
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-  const question = item.querySelector('.faq-question');
+// FAQ Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-item');
   
-  question.addEventListener('click', () => {
-    const isActive = item.classList.contains('active');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const toggle = item.querySelector('.faq-toggle');
     
-    // Close all other FAQ items
-    faqItems.forEach(otherItem => {
-      otherItem.classList.remove('active');
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all other FAQ items
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove('active');
+      });
+      
+      // Toggle current item
+      if (!isActive) {
+        item.classList.add('active');
+      }
     });
-    
-    // Toggle current item
-    if (!isActive) {
-      item.classList.add('active');
-    }
   });
 });
+
+// Expandable Services Functionality
+function toggleService(header) {
+  const serviceItem = header.parentElement;
+  const isActive = serviceItem.classList.contains('active');
+  
+  // Close all other service items
+  const allServiceItems = document.querySelectorAll('.service-item');
+  allServiceItems.forEach(item => {
+    item.classList.remove('active');
+  });
+  
+  // Toggle current service item
+  if (!isActive) {
+    serviceItem.classList.add('active');
+  }
+}
 
