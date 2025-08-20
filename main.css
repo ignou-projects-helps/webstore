@@ -183,6 +183,34 @@ main {
 .btn-sold:hover {
   opacity: 0.8; /* Slightly diminish when hovered */
 }
+/* main.css */
+
+/* Download Free Sample Button Styles */
+.btn-download {
+  display: inline-flex; /* Center items horizontally */
+  align-items: center;  /* Center items vertically */
+  justify-content: center; /* Align text and icon */
+  padding: 10px 20px; /* Padding for comfortable click area */
+  margin-top: 10px; /* Space from elements above */
+  text-decoration: none; /* Remove underline from link */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Make text bold */
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white; /* White text for contrast */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Optional: Hover effect for better UX */
+.btn-download:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Optional: Other styles (e.g., for icons, if needed) */
+.btn-download .download-icon {
+  width: 20px; /* Adjust icon size if needed */
+  height: 20px; /* Adjust icon size if needed */
+  margin-right: 5px; /* Space between icon and text */
+}
 /* Pagination Styles */
 .pagination {
   display: flex;
