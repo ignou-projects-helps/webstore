@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details - IGNOU Project Store</title>
+  <meta name="description" content="Detailed view of a selected IGNOU MCA/BCA project. Free viva support and expert guidance included.">
+  <link rel="stylesheet" href="main.css?v098">
+</head>
+<body>
+  <a href="index.html" class="home-button">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="home-icon">
+      <path d="M12 3l9 9h-3v9h-6v-6h-6v6H3v-9H0l12-9z"/>
+    </svg>
+  </a>
+  <!-- Header (Same as index.html) -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">ignouprojects.store 🛒</h1>
+      <p class="site-message">🌿 Thousands of fresh MCA/BCA projects. Scroll and own. All unique ✨</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-detail-section">
+      <div id="project-detail" class="project-detail-container">
+        <p>Loading project details...</p>
+      </div>
+    </section>
+  </main>
+  <!-- Floating WhatsApp Buy Button (Removed as it will be in project details) -->
+  
+
+  <!-- Footer (Reuse index.html footer if needed) -->
+  <footer class="bg-[#2c001e] text-gray-300 text-sm py-10 mt-10">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-semibold text-lg text-red-400 mb-3">Why Choose IGNOUProjects.store?</h3>
+        <ul class="space-y-2">
+          <li>✔ End-to-end project guidance</li>
+          <li>✔ Ready-to-submit projects</li>
+          <li>✔ Unlimited expert support</li>
+          <li>✔ Free viva training & mock tests</li>
+          <li>✔ Step-by-step explanation of code</li>
+          <li>✔ On-time delivery, no last-minute stress</li>
+          <li>✔ Affordable & student-friendly pricing</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold text-lg text-red-400 mb-3">Our Promise</h3>
+        <p class="leading-relaxed text-gray-400">
+          We understand students face fear and confusion during projects.  
+          Our expert team ensures that you not only submit a quality project but also
+          confidently face your viva. With us, your success is guaranteed.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-lg text-red-400 mb-3">Contact Us</h3>
+        <p>Email: <a href="mailto:support@ignouprojects.store" class="text-red-300 hover:underline">support@ignouprojects.store</a></p>
+        <p>Phone: +918826714264</p>
+        <p class="mt-4 text-gray-500">&copy; 2025 IGNOUProjects.store. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Fetch the project id from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('id');
+    const projectContainer = document.getElementById('project-detail');
+  
+    fetch('projects.json')
+      .then(res => res.json())
+      .then(data => {
+        const project = data.find(p => p.id === projectId);
+        if (!project) {
+          projectContainer.innerHTML = '<p>Project not found.</p>';
+          return;
+        }
+  
+        const posterUrl = `images/projects/${project.id}.png`;
+        projectContainer.innerHTML = `
+          <div class="project-card status-${project.status}">
+            <img src="${posterUrl}" alt="${project.title}" class="project-poster" style="height: 150px;">
+            <div class="project-info">
+              <h2 class="project-title">${project.title}</h2>
+              <p class="project-description">${project.description}</p>
+              <div class="project-price">₹${project.price}</div>
+              <div class="project-meta">
+                <span class="project-subject">${project.subject}</span>
+                <span class="project-status">${project.status.replace(/_/g, ' ')}</span>
+              </div>
+              <ul class="project-bonuses mt-4">
+                <li>✔ Free Viva Support</li>
+                <li>✔ Free Guidance</li>
+                <li>✔ Step-by-step explanation of code</li>
+                <li>✔ Ready-to-submit</li>
+              </ul>
+              <a href="https://wa.me/918826714264?text=Hi! I'm interested in the project '${project.title}'. Can you please provide more details about your services and pricing?" 
+                 class="btn-details mt-4" target="_blank">Buy Now via WhatsApp</a> <!-- Direct link for WhatsApp -->
+            </div>
+          </div>
+        `;
+      })
+      .catch(err => {
+        console.error(err);
+        projectContainer.innerHTML = '<p>Failed to load project details.</p>';
+      });
+  </script> 
+</body>
+</html>

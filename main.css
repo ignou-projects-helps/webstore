@@ -17,6 +17,42 @@ main {
   max-width: 1200px;
   margin: 0 auto;
 }
+.home-button {
+  position: absolute;
+  top: 10px; 
+  left: 10px;  
+  background: linear-gradient(135deg, #ee9f0c, #c4e40e); /* blue-purple gradient */
+  color: white;
+  text-decoration: none;
+  border-radius: 50%; /* Circular shape */
+  z-index: 1000; 
+  width: 50px; /* Fixed width for circular button */
+  height: 50px; /* Fixed height for circular button */
+  display: flex;
+  justify-content: center; /* Center icon */
+  align-items: center; /* Center icon */
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.home-icon {
+  fill: white; /* Ensure the icon is visible */
+  transition: fill 0.3s ease; /* Transition for hover effect */
+}
+
+.home-button:hover {
+  background: linear-gradient(135deg, #6366f1, #4f46e5); /* Invert gradient on hover */
+  transform: translateY(-2px);
+}
+
+.home-button:hover .home-icon {
+  fill: rgba(255, 255, 255, 0.8); /* Slightly change icon color on hover */
+}
+
+.home-button:hover {
+  background: linear-gradient(135deg, #6366f1, #4f46e5); /* invert gradient on hover */
+  transform: translateY(-2px);
+}
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -90,16 +126,17 @@ main {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #007bff;
+  background-color: #0aac17; /* Primary color */
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
   text-align: center;
-}
-.btn-details:hover {
-  background-color: #0056b3;
+  transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth background color change */
 }
 
+.btn-details:hover {
+  background-color: #da2b0c; /* Darker shade on hover */
+}
 /* Pagination Styles */
 .pagination {
   display: flex;

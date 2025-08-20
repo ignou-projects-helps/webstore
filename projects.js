@@ -54,17 +54,23 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const posterUrl = `images/projects/${project.id}.png`;
 
+            // Determine the appropriate URL and price based on status
+            const detailsUrl = project.status === 'sample' ? '/project-demo.html' : `/project.html?id=${project.id}`;
+            const priceText = project.status === 'sample' ? 'Free' : `₹${project.price}`;
+        
             projectCard.innerHTML = `
                 <img src="${posterUrl}" alt="${project.title}" class="project-poster">
                 <div class="project-info">
                     <h3 class="project-title">${project.title}</h3>
                     <p class="project-description">${project.description}</p>
-                    <div class="project-price">₹${project.price}</div>
+
+                    <div class="project-price">${priceText}</div>
                     <div class="project-meta">
                         <span class="project-subject">${project.subject}</span>
                         <span class="project-status">${project.status.replace(/_/g, ' ')}</span>
                     </div>
-                    <a href="#" class="btn-details">View Details</a>
+
+                    <a href="${detailsUrl}" class="btn-details">View Details</a>
                 </div>
             `;
             projectListContainer.appendChild(projectCard);
@@ -103,4 +109,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchProjects();
 });
-

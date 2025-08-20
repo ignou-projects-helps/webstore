@@ -1,6 +1,8 @@
 [
-  { "id": "10001", "title": "Libra - Online Library", "description": "A complete online library system for managing books and members.", "status": "unsold", "subject": "MCA", "price": 1999 },
+
+  { "id": "10000", "title": "Free Sample - Personal document scrapper", "description": "A search engine but for your data", "status": "sample", "subject": "MCA", "price": 0 },
   { "id": "10002", "title": "Readly - Library Manager", "description": "Library management with user-friendly catalog and issue tracking.", "status": "sample", "subject": "BCA", "price": 2499 },
+  { "id": "10001", "title": "Libra - Online Library", "description": "A complete online library system for managing books and members.", "status": "unsold", "subject": "MCA", "price": 1999 },
   { "id": "10003", "title": "Shelfio - Book Hub", "description": "Organize, issue, and track books digitally with ease.", "status": "owned", "subject": "MCA", "price": 3499 },
   { "id": "10004", "title": "Archivio - Smart Archive", "description": "Digital archive system for institutions and libraries.", "status": "sold", "subject": "BCA", "price": 1999 },
   { "id": "10005", "title": "Bookora - Community Library", "description": "An online hub for book lovers with sharing features.", "status": "not_ready", "subject": "MCA", "price": 2499 },
