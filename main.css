@@ -125,20 +125,63 @@ main {
 .status-sample .project-status { color: #ffc107; }
 .status-not_ready .project-status { color: #6c757d; }
 
-.btn-details {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #0aac17; /* Primary color */
-  color: #fff;
+/* styles.css */
+/* styles.css */
+.btn-details, .btn-order-whatsapp {
+  display: inline-flex; /* Change to inline-flex to center items */
+  align-items: center;  /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  padding: 10px 20px;
+  margin-top: 10px;
   text-decoration: none;
-  border-radius: 4px;
-  text-align: center;
-  transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth background color change */
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
+/* Yellow background for View Details button */
+.btn-details {
+  background-color: #7D7D7D; /* Dark Gray color for View Details button */
+  color: white; /* Ensure the text remains white for readability */
+}
+
+/* Green background for Order on WhatsApp button */
+.btn-order-whatsapp {
+  background-color: green; /* Green color for Order on WhatsApp button */
+  color: white; /* White text color for better contrast */
+}
+
+/* WhatsApp logo styles */
+.whatsapp-logo {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-right: 5px; /* Space between logo and text */
+}
+
+/* Optional: Hover effects for better UX */
 .btn-details:hover {
-  background-color: #da2b0c; /* Darker shade on hover */
+  background-color: orange; /* Change to a darker shade on hover */
+}
+
+.btn-order-whatsapp:hover {
+  background-color: darkgreen; /* Change to a darker shade on hover */
+}
+.btn-sold {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: red; /* Red background for Sold button */
+  color: white; /* White text color */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  cursor: not-allowed; /* Indicates that the button is not interactive */
+  text-align: center; /* Center text */
+}
+
+/* Optional: Hover effect */
+.btn-sold:hover {
+  opacity: 0.8; /* Slightly diminish when hovered */
 }
 /* Pagination Styles */
 .pagination {
