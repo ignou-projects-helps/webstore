@@ -56,7 +56,7 @@ const renderProjectCards = (projects) => {
         const whatsappOrderUrl = `https://wa.me/918826714264?text=${encodeURIComponent(`Hi! I'm interested in the project '${project.title}'. Can you please provide more details about your services and pricing?`)}`;
 
         projectCard.innerHTML = `
-            <img src="${posterUrl}" alt="${project.title}" class="project-poster">
+            <img src="${posterUrl}" alt="${project.title}" loading="lazy" class="project-poster">
             <div class="project-info">
                 <h3 class="project-title">${project.title}</h3>
                 <p class="project-description">${project.description}</p>
